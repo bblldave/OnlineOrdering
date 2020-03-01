@@ -1,0 +1,46 @@
+/* You can add global styles to this file, and also import other style files */
+// Your variable overrides
+$primary: #006494;
+$secondary: #4392F1;
+$light: #EBEBEB;
+$dark: #333333;
+$accent: #ED254E;
+
+// Bootstrap and its default variables
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+
+.btn-outline-accent{
+    background-color: transparentize($color: #000000, $amount: 1);
+    border: 1px solid $accent;
+    color: $accent;
+
+    &:hover{
+        background-color: $accent;
+    }
+}
+
+.sideBar{
+    background-color: $dark;
+    height: 100vh;
+    width: 12rem;
+    font-size: 1.5rem;
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+        a{
+            text-decoration: none;
+            li{
+                color: $light;
+                padding: 1rem;
+                &:hover, :active{
+                    background-color: $primary;
+                }
+            }
+        }
+        
+    }
+    
+}
+
