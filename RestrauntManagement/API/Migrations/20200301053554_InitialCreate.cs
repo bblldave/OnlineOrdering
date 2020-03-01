@@ -2,16 +2,32 @@
 
 namespace API.Migrations
 {
-    public partial class InitialDbStructure : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "Restaurants",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    UserAcctId = table.Column<int>(nullable: false),
+                    Name = table.Column<string>(nullable: true),
+                    Website = table.Column<string>(nullable: true),
+                    Cuisine = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Restaurants", x => x.Id);
+                });
+
             migrationBuilder.CreateTable(
                 name: "Locations",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                        .Annotation("Sqlite:Autoincrement", true),
                     Name = table.Column<string>(nullable: true),
                     Street = table.Column<string>(nullable: true),
                     City = table.Column<string>(nullable: true),
@@ -37,7 +53,7 @@ namespace API.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                        .Annotation("Sqlite:Autoincrement", true),
                     Day = table.Column<int>(nullable: false),
                     OpenTime = table.Column<string>(nullable: true),
                     CloseTime = table.Column<string>(nullable: true),
@@ -59,7 +75,7 @@ namespace API.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                        .Annotation("Sqlite:Autoincrement", true),
                     Type = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: true),
                     MinAmount = table.Column<decimal>(type: "decimal(12,2)", nullable: false),
@@ -82,7 +98,7 @@ namespace API.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                        .Annotation("Sqlite:Autoincrement", true),
                     MaxAdvanceDays = table.Column<int>(nullable: false),
                     LocationId = table.Column<int>(nullable: false)
                 },
@@ -102,7 +118,7 @@ namespace API.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                        .Annotation("Sqlite:Autoincrement", true),
                     PickupMinAdvanceMinutes = table.Column<int>(nullable: false),
                     PickupMaxAdvaceDays = table.Column<int>(nullable: false),
                     DeliveryMinAdvanceMinutes = table.Column<int>(nullable: false),
@@ -125,7 +141,7 @@ namespace API.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                        .Annotation("Sqlite:Autoincrement", true),
                     Pickup = table.Column<bool>(nullable: false),
                     Delivery = table.Column<bool>(nullable: false),
                     TableRes = table.Column<bool>(nullable: false),
@@ -149,7 +165,7 @@ namespace API.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                        .Annotation("Sqlite:Autoincrement", true),
                     MinPeople = table.Column<int>(nullable: false),
                     MaxPeople = table.Column<int>(nullable: false),
                     TableKeptMinutes = table.Column<int>(nullable: false),
@@ -229,6 +245,9 @@ namespace API.Migrations
 
             migrationBuilder.DropTable(
                 name: "Locations");
+
+            migrationBuilder.DropTable(
+                name: "Restaurants");
         }
     }
 }

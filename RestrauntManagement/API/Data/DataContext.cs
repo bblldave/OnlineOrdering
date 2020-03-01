@@ -9,9 +9,7 @@ namespace API.Data
 {
     public class DataContext : DbContext
     {
-        public DataContext(DbContextOptions<DataContext> options) : base(options)
-        {
-        }
+        public DataContext(DbContextOptions<DataContext> options) : base(options){ }
 
         public DbSet<Restaurant> Restaurants { get; set; }
         public DbSet<Location> Locations { get; set; }

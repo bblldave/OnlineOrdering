@@ -144,3 +144,4 @@ C:\Users\bblld\Desktop\OrderOnline\RestrauntManagement\API\bin\Debug\netcoreapp3
 C:\Users\bblld\Desktop\OrderOnline\RestrauntManagement\API\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\bblld\Desktop\OrderOnline\RestrauntManagement\API\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\bblld\Desktop\OrderOnline\RestrauntManagement\API\obj\Debug\netcoreapp3.1\API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\bblld\Desktop\OrderOnline\RestrauntManagement\API\bin\Debug\netcoreapp3.1\System.Text.Json.dll
